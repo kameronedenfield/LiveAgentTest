@@ -74,12 +74,12 @@ var initESW = function(gslbBaseURL) {
         "label":"Email"
       }],
     }];
-  embedded_svc.settings.directToButtonRouting = function(prechatFormData) {
+  //embedded_svc.settings.directToButtonRouting = function(prechatFormData) {
   // Dynamically changes the button ID based on what the visitor enters in the pre-chat form.
   // Returns a valid button ID.
-      if (prechatFormData[3].value === "Sales Request")
-        return "5730n0000008OSV";
-          };
+  //    if (prechatFormData[3].value === "Sales Request")
+  //      return "5730n0000008OSV";
+  //        };
 
   embedded_svc.init('https://cb--CRMDEV.cs67.my.salesforce.com', 'https://crmdev-careerbuilder.cs67.force.com/connect', gslbBaseURL, '00D0n000000CxtP', 'CBESLiveAgentSnapin2', { baseLiveAgentContentURL: 'https://c.la1-c2cs-iad.salesforceliveagent.com/content', deploymentId: '5720n0000008ONd', buttonId: '5730n0000008OSV', 
     baseLiveAgentURL: 'https://d.la1-c2cs-iad.salesforceliveagent.com/chat', eswLiveAgentDevName: 'EmbeddedServiceLiveAgent_Parent04I0n0000008OIyEAM_1638e075207', isOfflineSupportEnabled: true}); 
