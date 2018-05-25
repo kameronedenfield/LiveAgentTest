@@ -30,6 +30,8 @@ embedded_svc.settings.language = ''; //For example, enter 'en' or 'en-US'
 
 embedded_svc.settings.defaultMinimizedText = 'Chat with us now.'; //(Defaults to Chat with an Expert)
 embedded_svc.settings.disabledMinimizedText = 'Send us a message.'; //(Defaults to Agent Offline)
+
+
 //embedded_svc.settings.prechatBackgroundImgURL = "https://cb--crmdev--c.cs67.visual.force.com/resource/1446575398000/LiveChat_CBLogo";
 //embedded_svc.settings.loadingText = ''; //(Defaults to Loading)
 //embedded_svc.settings.storageDomain = 'yourdomain.com'; //(Sets the domain for your deployment so that visitors can navigate subdomains during a chat session)
@@ -74,7 +76,13 @@ embedded_svc.settings.extraPrechatInfo = [{
 }];
 
 
-embedded_svc.init('https://cb--CRMDEV.cs67.my.salesforce.com', 'https://crmdev-careerbuilder.cs67.force.com/connect', gslbBaseURL, '00D0n000000CxtP', 'CBESLiveAgentSnapin2', { baseLiveAgentContentURL: 'https://c.la1-c2cs-iad.salesforceliveagent.com/content', deploymentId: '5720n0000008ONd', buttonId: '5730n0000008OSV', baseLiveAgentURL: 'https://d.la1-c2cs-iad.salesforceliveagent.com/chat', eswLiveAgentDevName: 'EmbeddedServiceLiveAgent_Parent04I0n0000008OIyEAM_1638e075207', isOfflineSupportEnabled: true}); };if (!window.embedded_svc) { var s = document.createElement('script'); s.setAttribute('src', 'https://cb--CRMDEV.cs67.my.salesforce.com/embeddedservice/5.0/esw.min.js'); s.onload = function() { initESW(null); }; document.body.appendChild(s); } else { initESW('https://service.force.com'); }</script>
+embedded_svc.init('https://cb--CRMDEV.cs67.my.salesforce.com', 'https://crmdev-careerbuilder.cs67.force.com/connect', gslbBaseURL, '00D0n000000CxtP', 'CBESLiveAgentSnapin2', { baseLiveAgentContentURL: 'https://c.la1-c2cs-iad.salesforceliveagent.com/content', deploymentId: '5720n0000008ONd', embedded_svc.settings.directToButtonRouting = function(prechatFormData) {
+// Dynamically changes the button ID based on what the visitor enters in the pre-chat form.
+// Returns a valid button ID.
+ if (prechatFormData[3].value === "Sales Request")
+   return "5730n0000008OSV";
+};//buttonId: '5730n0000008OSV'
+, baseLiveAgentURL: 'https://d.la1-c2cs-iad.salesforceliveagent.com/chat', eswLiveAgentDevName: 'EmbeddedServiceLiveAgent_Parent04I0n0000008OIyEAM_1638e075207', isOfflineSupportEnabled: true}); };if (!window.embedded_svc) { var s = document.createElement('script'); s.setAttribute('src', 'https://cb--CRMDEV.cs67.my.salesforce.com/embeddedservice/5.0/esw.min.js'); s.onload = function() { initESW(null); }; document.body.appendChild(s); } else { initESW('https://service.force.com'); }</script>
 
 
 </body>
